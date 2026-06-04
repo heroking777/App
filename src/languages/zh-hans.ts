@@ -8882,7 +8882,7 @@ ${reportName}
         `),
         notAllowedMessage: (accountOwnerEmail: string) => `作为${accountOwnerEmail}的<a href="${CONST.DELEGATE_ROLE_HELP_DOT_ARTICLE_LINK}">副驾驶</a>，你没有权限执行此操作。抱歉！`,
         removeCopilotAccess: '移除副驾驶访问权限',
-        removeCopilotAccessConfirmation: '您确定要移除对此账户的副驾驶访问权限吗？',
+        removeCopilotAccessConfirmation: '确定要移除你对该账户的副驾访问权限吗？',
         copilotAccess: 'Copilot 访问',
     },
     debug: {

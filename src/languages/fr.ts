@@ -9192,8 +9192,8 @@ Ajoutez davantage de règles de dépenses pour protéger la trésorerie de l’e
         `),
         notAllowedMessage: (accountOwnerEmail: string) =>
             `En tant que <a href="${CONST.DELEGATE_ROLE_HELP_DOT_ARTICLE_LINK}">copilote</a> pour ${accountOwnerEmail}, vous n’avez pas l’autorisation d’effectuer cette action. Désolé !`,
-        removeCopilotAccess: "Supprimer l'accès copilote",
-        removeCopilotAccessConfirmation: 'Êtes-vous sûr de vouloir supprimer votre accès copilote à ce compte ?',
+        removeCopilotAccess: 'Supprimer l’accès au copilote',
+        removeCopilotAccessConfirmation: 'Voulez-vous vraiment supprimer votre accès copilote à ce compte ?',
         copilotAccess: 'Accès Copilot',
     },
     debug: {

@@ -9039,7 +9039,7 @@ ${reportName}
         `),
         notAllowedMessage: (accountOwnerEmail: string) =>
             `${accountOwnerEmail} の<a href="${CONST.DELEGATE_ROLE_HELP_DOT_ARTICLE_LINK}">コパイロット</a>として、この操作を行う権限がありません。申し訳ありません。`,
-        removeCopilotAccess: 'コパイロットアクセスを削除',
+        removeCopilotAccess: 'Copilot へのアクセスを削除',
         removeCopilotAccessConfirmation: 'このアカウントへのコパイロットアクセスを削除してもよろしいですか？',
         copilotAccess: 'Copilot へのアクセス',
     },

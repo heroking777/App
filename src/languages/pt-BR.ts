@@ -9112,8 +9112,8 @@ Adicione mais regras de gasto para proteger o fluxo de caixa da empresa.`,
         `),
         notAllowedMessage: (accountOwnerEmail: string) =>
             `Como <a href="${CONST.DELEGATE_ROLE_HELP_DOT_ARTICLE_LINK}">copiloto</a> de ${accountOwnerEmail}, você não tem permissão para realizar esta ação. Desculpe!`,
-        removeCopilotAccess: 'Remover acesso de copiloto',
-        removeCopilotAccessConfirmation: 'Tem certeza de que deseja remover seu acesso de copiloto a esta conta?',
+        removeCopilotAccess: 'Remover acesso do copiloto',
+        removeCopilotAccessConfirmation: 'Tem certeza de que quer remover seu acesso como copiloto desta conta?',
         copilotAccess: 'Acesso ao Copilot',
     },
     debug: {

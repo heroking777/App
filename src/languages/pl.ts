@@ -9103,8 +9103,8 @@ Dodaj więcej zasad wydatków, żeby chronić płynność finansową firmy.`,
         `),
         notAllowedMessage: (accountOwnerEmail: string) =>
             `Jako <a href="${CONST.DELEGATE_ROLE_HELP_DOT_ARTICLE_LINK}">kopilot</a> dla ${accountOwnerEmail} nie masz uprawnień do wykonania tej akcji. Przepraszamy!`,
-        removeCopilotAccess: 'Usuń dostęp kopilota',
-        removeCopilotAccessConfirmation: 'Czy na pewno chcesz usunąć swój dostęp kopilota do tego konta?',
+        removeCopilotAccess: 'Usuń dostęp współpilota',
+        removeCopilotAccessConfirmation: 'Czy na pewno chcesz usunąć swój dostęp współpilota do tego konta?',
         copilotAccess: 'Dostęp do Copilota',
     },
     debug: {

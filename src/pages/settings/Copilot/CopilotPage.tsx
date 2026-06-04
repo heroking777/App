@@ -83,7 +83,7 @@ function CopilotPage() {
         });
     }, [showConfirmModal, translate]);
 
-    const showRemoveDelegatorModal = useCallback(() => {
+    const showRemoveDelegatorModal = () => {
         return showConfirmModal({
             title: translate('delegate.removeCopilotAccess'),
             prompt: translate('delegate.removeCopilotAccessConfirmation'),
@@ -92,7 +92,7 @@ function CopilotPage() {
             shouldShowCancelButton: true,
             danger: true,
         });
-    }, [showConfirmModal, translate]);
+    };
 
     const errorFields = account?.delegatedAccess?.errorFields ?? {};
 
@@ -147,16 +147,13 @@ function CopilotPage() {
         };
     }, [setMenuPosition]);
 
-    const showDelegatorPopoverMenu = useCallback(
-        (nativeEvent: GestureResponderEvent | KeyboardEvent, delegator: Delegate) => {
-            delegateButtonRef.current = nativeEvent?.currentTarget as HTMLDivElement;
-            setMenuPosition();
-            setShouldShowDelegatorPopoverMenu(true);
-            setSelectedDelegator(delegator);
-            setSelectedEmail(delegator.email);
-        },
-        [setMenuPosition],
-    );
+    const showDelegatorPopoverMenu = (nativeEvent: GestureResponderEvent | KeyboardEvent, delegator: Delegate) => {
+        delegateButtonRef.current = nativeEvent?.currentTarget as HTMLDivElement;
+        setMenuPosition();
+        setShouldShowDelegatorPopoverMenu(true);
+        setSelectedDelegator(delegator);
+        setSelectedEmail(delegator.email);
+    };
 
     const renderTitleWithRole = useCallback(
         (titleText: string, descriptionText: string, role: DelegateRole | undefined) => (
