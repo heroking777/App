@@ -6,6 +6,7 @@ import {
     clearOnyxForDelegateTransition,
     isConnectedAsDelegate,
     removeDelegate,
+    removeDelegator,
     updateDelegateRole,
 } from '@libs/actions/Delegate';
 import DateUtils from '@libs/DateUtils';
@@ -127,6 +128,38 @@ describe('actions/Delegate', () => {
                     key: ONYXKEYS.ACCOUNT,
                     callback: (account) => {
                         expect(account?.delegatedAccess?.delegates?.at(0)?.pendingAction).toBe(CONST.RED_BRICK_ROAD_PENDING_ACTION.DELETE);
+                        Onyx.disconnect(connection);
+                        resolve();
+                    },
+                });
+            });
+        });
+        resetQueue();
+    });
+    describe('removeDelegator', () => {
+        it('should remove a delegator', async () => {
+            const delegatedAccess: DelegatedAccess = {
+                delegators: [
+                    {
+                        email: 'test@test.com',
+                        role: CONST.DELEGATE_ROLE.ALL,
+                    },
+                ],
+            };
+
+            await Onyx.merge(ONYXKEYS.ACCOUNT, {delegatedAccess});
+            await waitForBatchedUpdates();
+
+            pause();
+
+            removeDelegator({email: 'test@test.com', delegatedAccess});
+            await waitForBatchedUpdates();
+
+            await new Promise<void>((resolve) => {
+                const connection = Onyx.connect({
+                    key: ONYXKEYS.ACCOUNT,
+                    callback: (account) => {
+                        expect(account?.delegatedAccess?.delegators?.at(0)?.pendingAction).toBe(CONST.RED_BRICK_ROAD_PENDING_ACTION.DELETE);
                         Onyx.disconnect(connection);
                         resolve();
                     },
